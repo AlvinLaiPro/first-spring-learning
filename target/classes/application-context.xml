@@ -4,5 +4,5 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <!-- bean definitions here -->
-    <bean id="service" class="com.firstspringlearning.myapp.MyService"></bean>
+    <bean id="service" class="com.firstspringlearning.myapp.MyService" scope="prototype"></bean>
 </beans>
