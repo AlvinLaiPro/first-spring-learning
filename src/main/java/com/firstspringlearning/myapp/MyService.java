@@ -1,7 +1,14 @@
 package com.firstspringlearning.myapp;
 
 public class MyService {
-    public void doSomething() {
-        System.out.println("MyService.doSomething");
+
+    public MyService(MyRepository repository) {
+        this.repository = repository;
+    }
+
+    MyRepository repository;
+
+    public void doBusinessLogic() {
+        repository.doQuery();
     }
 }
