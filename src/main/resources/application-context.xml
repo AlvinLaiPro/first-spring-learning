@@ -1,15 +1,9 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-
-    <!-- bean definitions here -->
-    <bean id="service" class="com.firstspringlearning.myapp.MyService" scope="prototype">
-        <!--
-            the name attribute matches the field name of MyRepository class;
-            the ref attribute matches the bean defined inside this doc
-         -->
-        <property name="repository" ref="repository" />
-    </bean>
-    <bean id="repository" class="com.firstspringlearning.myapp.MyRepository" />
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+">
+    <context:component-scan base-package="com.firstspringlearning.myapp" />
 </beans>
