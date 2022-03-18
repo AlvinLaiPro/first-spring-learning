@@ -6,7 +6,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class  App {
     public static void main(String[] args) {
-        ApplicationContext cxt = new AnnotationConfigApplicationContext("com.firstspringlearning.myapp");
+        ApplicationContext cxt = new AnnotationConfigApplicationContext(AppConfig.class);
         MyService bean = cxt.getBean(MyService.class);
         bean.doBusinessLogic();
     }
