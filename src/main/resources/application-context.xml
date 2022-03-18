@@ -5,7 +5,11 @@
 
     <!-- bean definitions here -->
     <bean id="service" class="com.firstspringlearning.myapp.MyService" scope="prototype">
-        <constructor-arg ref="repository"></constructor-arg>
+        <!--
+            the name attribute matches the field name of MyRepository class;
+            the ref attribute matches the bean defined inside this doc
+         -->
+        <property name="repository" ref="repository" />
     </bean>
     <bean id="repository" class="com.firstspringlearning.myapp.MyRepository" />
 </beans>

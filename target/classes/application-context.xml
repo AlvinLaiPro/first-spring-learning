@@ -5,7 +5,7 @@
 
     <!-- bean definitions here -->
     <bean id="service" class="com.firstspringlearning.myapp.MyService" scope="prototype">
-        <constructor-arg ref="repository"></constructor-arg>
+        <property name="repository" ref="repository" />
     </bean>
     <bean id="repository" class="com.firstspringlearning.myapp.MyRepository" />
 </beans>
