@@ -1,15 +1,10 @@
 package com.firstspringlearning.myapp;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
-@Service
 public class MyService {
 
-    MyRepository repository;
+    private MyRepository repository;
 
-    @Autowired
-    public void MyService(MyRepository repository) {
+    public MyService(MyRepository repository) {
         this.repository = repository;
     }
 
