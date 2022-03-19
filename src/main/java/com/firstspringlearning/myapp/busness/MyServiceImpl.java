@@ -11,8 +11,8 @@ import java.util.Arrays;
 
 @Service
 public class MyServiceImpl implements MyService, EnvironmentAware {
-    @Value("${my.name:Patrick}")
-    private String myName;
+    @Value("${service.baseUrl}")
+    private String SERVICE_BASEURL;
 
     private MyRepository repository;
     private Environment environment;
@@ -24,8 +24,9 @@ public class MyServiceImpl implements MyService, EnvironmentAware {
 
     @Override
     public void doBusinessLogic() {
-        System.out.println("MyService.doBusinessLogic by " + myName);
+        System.out.println("MyService.doBusinessLogic");
         System.out.println("Active profile: " + Arrays.toString(environment.getActiveProfiles()));
+        System.out.println(String.format("connect to [%s]", SERVICE_BASEURL));
         repository.doQuery();
     }
 
