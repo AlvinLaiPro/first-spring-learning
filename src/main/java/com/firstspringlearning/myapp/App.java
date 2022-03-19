@@ -1,12 +1,19 @@
 package com.firstspringlearning.myapp;
 
+import com.firstspringlearning.myapp.busness.AnotherServiceImpl;
+import com.firstspringlearning.myapp.busness.MyService;
+import com.firstspringlearning.myapp.busness.MyServiceImpl;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class  App {
     public static void main(String[] args) {
         ApplicationContext cxt = new AnnotationConfigApplicationContext(AppConfig.class);
-        MyService bean = cxt.getBean(MyService.class);
-        bean.doBusinessLogic();
+        MyService service1 = cxt.getBean(MyServiceImpl.class);
+        MyService service2 = cxt.getBean(AnotherServiceImpl.class);
+
+        service1.doBusinessLogic();
+        service2.doBusinessLogic();
     }
 }
